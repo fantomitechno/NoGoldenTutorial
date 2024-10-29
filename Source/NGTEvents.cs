@@ -11,7 +11,7 @@ class NGTEvents
     {
       Player player = level.Tracker.GetEntity<Player>();
 
-      if (IsHoldingDeathlessBerry(player) && (entityData.Name == "playbackTutorial" || entityData.Name == "VivHelper/CPP"))
+      if ((NGT.Settings.HideWithoutBerry || IsHoldingDeathlessBerry(player)) && (entityData.Name == "playbackTutorial" || entityData.Name == "VivHelper/CPP"))
       {
         return true; // if this returns true, it means that the entity was succesfully loaded, but if we pretend to have loaded it without doing anything
       }
