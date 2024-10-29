@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <AssemblyName>NoGoldenTutorial</AssemblyName>
-        <RootNamespace>Celeste.Mod.NoGoldenTutorial</RootNamespace>
+        <AssemblyName>NGT</AssemblyName>
+        <RootNamespace>Celeste.Mod.NGT</RootNamespace>
         <LangVersion>latest</LangVersion>
         <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\..\Celeste.dll')">..\..\..</CelestePrefix>
         <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
@@ -33,15 +33,15 @@
         <Copy SourceFiles="$(OutputPath)\$(AssemblyName).pdb" DestinationFolder="..\bin" />
     </Target>
 
-    <Target Name="PackageMod" AfterTargets="CopyFiles" Inputs="$(ZippedFiles)" Outputs="..\NoGoldenTutorial.zip" Condition="'$(Configuration)' == 'Release'">
+    <Target Name="PackageMod" AfterTargets="CopyFiles" Inputs="$(ZippedFiles)" Outputs="..\NGT.zip" Condition="'$(Configuration)' == 'Release'">
         <ItemGroup>
             <FilesToPackage Include="$(ZippedFiles)" />
         </ItemGroup>
-        <PackageMod Files="@(FilesToPackage)" OutputPath="..\NoGoldenTutorial.zip" />
+        <PackageMod Files="@(FilesToPackage)" OutputPath="..\NGT.zip" />
     </Target>
     
     <PropertyGroup>
-        <PathMap>$(MSBuildProjectDirectory)=NoGoldenTutorial/</PathMap>
+        <PathMap>$(MSBuildProjectDirectory)=NGT/</PathMap>
     </PropertyGroup>
 
     <!-- Inline task used to create a .zip for the mod -->

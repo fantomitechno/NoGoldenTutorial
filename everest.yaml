@@ -1,6 +1,6 @@
-- Name: NoGoldenTutorial
+- Name: NGT
   Version: 0.1.0
-  DLL: bin/NoGoldenTutorial.dll
+  DLL: bin/NGT.dll
   Dependencies:
     - Name: EverestCore
       Version: 1.4673.0
